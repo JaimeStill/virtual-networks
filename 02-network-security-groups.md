@@ -165,6 +165,24 @@ You can implement application security groups in your Azure virtual network to l
 
 Application security groups work in the same way as network security groups, but they provide an application-centric way of looking at your infrastructure. You join your virtual machines to an application security group. Then you use the application security group as a source or destination in the network security group rules.
 
+### Scenario Requirements
+
+Here are the excenario requirements for the above configuration:
+
+* Six virtual machines with two web servers and two database servers.
+
+* Customers access the online catalog hosted on the web servers.
+
+* Web servers must be accessible from the internet over HTTP port 80 and HTTPS port 443.
+
+* Inventory information is stored on database servers.
+
+* The database servers must be accessible over HTTPS port 1433.
+
+* Only the web servers should have access to the database servers.
+
+### Solution
+
 ```mermaid
 graph TB
     subgraph inet["Internet"]
@@ -187,24 +205,6 @@ graph TB
         vm6[[VM 6]]
     end
 ```
-
-### Scenario Requirements
-
-Here are the excenario requirements for the above configuration:
-
-* Six virtual machines with two web servers and two database servers.
-
-* Customers access the online catalog hosted on the web servers.
-
-* Web servers must be accessible from the internet over HTTP port 80 and HTTPS port 443.
-
-* Inventory information is stored on database servers.
-
-* The database servers must be accessible over HTTPS port 1433.
-
-* Only the web servers should have access to the database servers.
-
-### Solution
 
 1. Create application security groups for the virtual machines.
 
@@ -230,3 +230,12 @@ Here are the excenario requirements for the above configuration:
 
 ## Things to Consider When Using Application Security Groups
 
+There are several advantages to implementing application security groups in your virtual networks.
+
+* **Consider IP address maintenance.** When you control network traffic by using application security gruops, you don't need to configure inbound and outbound traffic for specific IP addresses. If you have many virtual machines in your configuration, it can be difficult to specify all of the affected IP addresses. As you maintain your configuration, the number of your servers can change. These changes can require you to modify how you support different IP addresses in your security rules.
+
+* **Consider no subnets.** By organizing your virtual machines into application security gruops, you don't need to also distribute your servers across specific subnets. You can arrange your servers by application and purpose to achieve logical groupings.
+
+* **Consider simplified rules.** Application security gruops help to eliminate the need for multiple rule sets. You don't need to create a separate rule for each virtual machine. You can dynamically apply new rules to designated application security groups. New security rules are automatically applied to all the virtual machines in the specified application security group.
+
+* **Consider workload support.** A configuration that ipmlements application security groups is easy to maintain and understand because the organization is based on workload usage. Application security groups provide logical arrangements for your applications, services, data storage, and workloads.

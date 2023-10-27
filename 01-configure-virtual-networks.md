@@ -172,11 +172,3 @@ A private IP address is allocated from the address range of the virtual network 
 * **Static:** You select and assign any unassigned or unreserved IP address in the subnet's address range.
 
     Suppose a subnet's address range is `10.0.0.0/16` and addresses `10.0.0.4` through `10.0.0.9` are already assigned to other resources. In this scenario, you can assign any address between `10.0.0.10` and `10.0.255.254`.
-
-## References
-
-* [Azure Virtual Network documentation](https://learn.microsoft.com/en-us/azure/virtual-network/)
-* [Azure networking documentation](https://learn.microsoft.com/en-us/azure/networking/)
-* [Public IP addresses for virtual networks](https://learn.microsoft.com/en-us/azure/virtual-network/public-ip-addresses)
-* [Private IP addresses for virtual networks](https://learn.microsoft.com/en-us/azure/virtual-network/private-ip-addresses)
-* [Virtual networks and virtual machines in Azure](https://learn.microsoft.com/en-us/azure/virtual-network/network-overview)
