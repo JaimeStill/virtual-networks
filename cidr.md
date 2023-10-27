@@ -18,15 +18,15 @@ An IPv4 address consists of 32 bits. Each string of numbers separated by the per
 
 *Class A*  
 
-A Class A IPv4 address has 8 network prefix bits. For example, consider 44.0.0.1, where 44 is the network address and 0.0.1 is the host address.
+A Class A IPv4 address has 8 network prefix bits. For example, consider `44.0.0.1`, where `44` is the network address and `0.0.1` is the host address.
 
 *Class B*
 
-A Class B IPv4 address has 16 network prefix bits. For example, consider 128.16.0.2, where 128.16 is the network address and 0.2 is the host address.
+A Class B IPv4 address has 16 network prefix bits. For example, consider `128.16.0.2`, where `128.16` is the network address and `0.2` is the host address.
 
 *Class C*
 
-A Class C IPv4 address has 24 network prefix bits. For instance, consider 192.168.1.100, where 192.168.1 is the network address and 100 is the host address.
+A Class C IPv4 address has 24 network prefix bits. For instance, consider `192.168.1.100`, where `192.168.1` is the network address and `100` is the host address.
 
 ### Classless addresses
 
@@ -34,7 +34,7 @@ Classes or Classless Inter-Domain Routing (CIDR) addresses use variable length s
 
 A VLSM sequence allows network administrators to break down an IP address space into subnets of various sizes. Each subnet can have a flexible host count and a limited number of IP addresses. A CIDR IP address appends a suffix value stating the number of network address prefix bits toa  noraml IP address.
 
-For example, 192.0.2.0/24 is an IPv4 CIDR address where the first 24 bits, or 192.0.2, is the network address.
+For example, `192.0.2.0/24` is an IPv4 CIDR address where the first 24 bits, or `192.0.2`, is the network address.
 
 ## What are the limitations of classful IP addressing that CIDR overcomes?
 
@@ -58,10 +58,10 @@ For example, an organization with 300 devices couldn't have used a Class C IP ad
 
 Classful IPs limited your ability to combine networks as required. For example, these IP addresses belong to different class C networks in the classful architecture:
 
-* 192.168.1.0
-* 192.168.0.0
+* `192.168.1.0`
+* `192.168.0.0`
 
-As a network administrator, you couldn't have combined both networks because the class C subnet mask was fixed as 255.255.255.0.
+As a network administrator, you couldn't have combined both networks because the class C subnet mask was fixed as `255.255.255.0`.
 
 ## What are the benefits of CIDR?
 
