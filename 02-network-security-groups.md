@@ -85,21 +85,21 @@ Consider teh following virtual network configuration that shows network security
 ```mermaid
 flowchart TD
     subgraph sn1[Subnet 1]
-    vm1[VM 1]---nc1[NIC]
-    nc1<-->nsg2[NSG 2];
-    nsg2<-->nsg1[NSG 1]
-    vm2[VM 2]---nc2[NIC]
+    vm1[[VM 1]]---nc1[NIC]
+    nc1<-->nsg2{{NSG 2}};
+    nsg2<-->nsg1{{NSG 1}}
+    vm2[[VM 2]]---nc2[NIC]
     nc2<--->nsg1
     end
     subgraph sn2[Subnet 2]
-    vm3[VM 3]---nc3[NIC]
-    nc3<-->nsg3[NSG 2]
+    vm3[[VM 3]]---nc3[NIC]
+    nc3<-->nsg3{{NSG 2}}
     end
     subgraph sn3[Subnet 3]
-    vm4[VM 4]---nc4[NIC]
+    vm4[[VM 4]]---nc4[NIC]
     end
-    nsg1<-->inet(["`Internet
-    HTTP (TCP port 80)`"])
+    nsg1<-->inet(["Internet
+    HTTP (TCP port 80)"])
     nsg3<--->inet
     nc4<---->inet
 ```
