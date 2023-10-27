@@ -166,20 +166,20 @@ You can implement application security groups in your Azure virtual network to l
 Application security groups work in the same way as network security groups, but they provide an application-centric way of looking at your infrastructure. You join your virtual machines to an application security group. Then you use the application security group as a source or destination in the network security group rules.
 
 ```mermaid
-flowchart TB
+graph TB
     subgraph inet["Internet"]
         http([HTTP:80])
         https([HTTPS:443])
         https2([HTTPS:1443])
     end
     subgraph nsg[NSG]
-        subgraph web[WebASG - Web servers]
+        subgraph web["WebASG - Web servers"]
             vm1[[VM 1]] ~~~ vm5[[VM 5]]
         end
-        subgraph db[DBASG - Database servers]
+        subgraph db["DBASG - Database servers"]
             vm3[(VM 3)] ~~~ vm4[(VM 4)]
         end
-        web -- Rule 2 (HTTP:1433) --> db
+        web -- "Rule 2 (HTTP:1433)" --> db
         http -- Rule 1 --> web
         https -- Rule 1 --> web
         https2 -. Rule 3 .-x db
