@@ -1,4 +1,4 @@
-# Network Security Groups
+# [Network Security Groups](https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/)
 
 You can limit network traffic to resources in your virtual network by using a network security group. You can assign a network security group to a subnet or a network interface, and define security rules in the group to control network traffic.
 
